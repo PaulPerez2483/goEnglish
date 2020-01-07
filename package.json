@@ -1,0 +1,28 @@
+{
+  "name": "empty-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "clean": "rm dist/bundle.js",
+    "build-dev": "webpack -d --mode development --watch",
+    "build-prod": "webpack -p --mode production --watch"
+  },
+  "dependencies": {
+    "@rqrauhvmra/tobi": "^1.9.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.6",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.4.0",
+    "eslint": "^6.7.2",
+    "style-loader": "^1.0.2",
+    "van11y-accessible-accordion-aria": "^3.0.1",
+    "webpack": "^4.41.3",
+    "webpack-cli": "^3.3.10"
+  }
+}

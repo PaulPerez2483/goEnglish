@@ -1,0 +1,247 @@
+  * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  }
+
+  body{
+  background-color: #3d7978;
+}
+
+  .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .stamp_img > img {
+      margin: 50px 0;
+
+  }
+
+  .accordion_nav {
+    width: 90%;
+    margin: 0 5% 0 5%;
+  }
+
+  .accordion p {
+    margin: 0;
+ }
+
+  .accordion__button:first-child {
+    border-top: 1px solid #800a47;
+
+  }
+
+  .accordion__button {
+    position: relative;
+    display: block;
+    margin: -1px 0 0;
+    border: 1px solid #800a47;
+    padding: 0.7rem 1rem;
+    width: 100%;
+    text-align: left;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    background: #800a47;
+    cursor: pointer;
+ }
+  .accordion__button:focus, .accordion__button:hover {
+    background: rgb(226, 226, 226);
+    color: #800a47;
+ }
+  .accordion__button:focus::after, .accordion__button:hover::after {
+    border-top-color: #800a47
+ }
+  .accordion__button::after {
+    content: '';
+    position: absolute;
+    right: 1rem;
+    top: 0.65rem;
+    width: 0;
+    height: 0;
+    /* border-left: 10px solid transparent;
+    border-right: 10px solid transparent; */
+    border-top: 15px solid white;
+ }
+  .accordion__button.expanded {
+    background: white;
+    color: #800a47;
+    border: 1px solid #800a47;
+
+ }
+  .accordion__button.expanded::after {
+    /* border-left: 10px solid transparent;
+    border-right: 10px solid transparent; */
+    border-bottom: 15px solid white;
+    border-top: none;
+ }
+  .accordion__section {
+    border-left: 1px solid #800a47;
+    border-right: 1px solid #800a47;
+    padding: 1rem;
+    background: white;
+    max-height: 0vh;
+    overflow: hidden;
+    padding: 0;
+ }
+  .accordion__section.open {
+    max-height: 100vh;
+    overflow: auto;
+    padding: 0.25em;
+    visibility: visible;
+ }
+
+ .accordion__section > a {
+  float: left;
+  }
+
+  #accordionGroup{
+    list-style-type: none;
+  }
+
+  #accordionGroup > li{
+    margin-bottom: 6px;
+    
+  }
+
+  
+
+/* hiding css tobi styles */
+ .tobi-zoom__icon {
+  display: none !important;
+}
+
+
+ @media screen and (min-width: 950px) {
+  body {
+    /* background-image: linear-gradient(#337775, #b1baba, #337775); */
+    height: 100VH;
+  }
+
+  .button_holder { 
+    max-width: 1200px;
+    margin: auto;
+    /* background-color: rgba(255, 0, 0, 0.205); */
+    position: relative;
+    margin-top: -620px;
+  }
+
+ 
+
+  .stamp_img > img {
+    margin-top: 150px;
+    z-index: 2 !important;
+
+}
+
+  #accordionGroup > li > button {
+    margin: 10% !important
+  }
+
+  #accordionGroup {
+    position: relative;
+    height: 100vh;
+  }
+
+  /* lebanon */
+  #accordionGroup > li:nth-child(1) {
+    position: absolute;
+    top: 2%;
+    left: 5%;
+    
+  }
+
+  /* italy */
+  #accordionGroup > li:nth-child(2) {
+    position: absolute;
+    top: 2%;
+    left: 25%;
+    
+  }
+
+  /* mexico */
+  #accordionGroup > li:nth-child(3) {
+    position: absolute;
+    top: 26%;
+    left: 8%;
+    
+  }
+
+  /* spain */
+  #accordionGroup > li:nth-child(4) {
+    position: absolute;
+    top: 3%;
+    left: 50%;
+    
+  }
+
+  /* saudi arabia */
+  #accordionGroup > li:nth-child(5) {
+    position: absolute;
+    top: 2%;
+    left: 80%;
+    
+  }
+
+  /* denmark */
+  #accordionGroup > li:nth-child(6) {
+    position: absolute;
+    top: 24%;
+    left: 75%;
+    
+  }
+
+  /* chile */
+  #accordionGroup > li:nth-child(7) {
+    position: absolute;
+    top: 56%;
+    left: 80%;
+    
+  }
+
+  /* france */
+  #accordionGroup > li:nth-child(8) {
+    position: absolute;
+    top: 49%;
+    left: 13%;
+    
+  }
+
+  /* brazil */
+  #accordionGroup > li:nth-child(9) {
+    position: absolute;
+    top: 73%;
+    left: 10%
+    
+  }
+
+  /* martinique */
+  #accordionGroup > li:nth-child(10) {
+    position: absolute;
+    top: 65%;
+    left: 34%
+    
+  }
+  /* egype */
+  #accordionGroup > li:nth-child(11) {
+    position: absolute;
+    top: 70%;
+    left: 60%
+    
+  } 
+
+
+  
+}
+
+
+
+
+
+
+
+
