@@ -1,10 +1,12 @@
 
+*.vscode
 .cache/
 coverage/
 dist/
 !dist/index.html
 node_modules/
 *.log
+backup_files/
 
 # OS generated files
 .DS_Store
@@ -14,3 +16,4 @@ node_modules/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
