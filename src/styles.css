@@ -26,7 +26,7 @@
 
   .stamp_img > img {
       margin: 50px 0;
-      width: 510px;
+      width: 480px;
   }
 
   .accordion_nav {
@@ -125,6 +125,9 @@
  .tobi-zoom__icon {
   display: none !important;
 }
+.icons {
+  display: none;
+}
 
 
  @media screen and (min-width: 950px) {
@@ -185,96 +188,63 @@
   color: #077f83;
 }
 
-.bg-position {
- background-position: center;
- background-size: cover;
+  .bg-position {
+  background-position: center;
+   background-size: cover;
   }
 
-  /* brazil */
   #accordionGroup > li {
     position: absolute;
+    display: inline-block;
 
   }
 
-  /* italy */
-  #accordionGroup > li:nth-child(2) {
-    position: absolute;
-    top: 2%;
-    left: 25%;
-    
+  #accordionGroup > li:nth-child(1) {
+    left:50px;
+
   }
 
-  /* mexico */
-  #accordionGroup > li:nth-child(3) {
-    position: absolute;
-    top: 26%;
-    left: 8%;
-    
+  .icons{
+    height: 80px;
+    width: 80px;
+    background-size:cover;
+    background-position:center;
+    z-index: 999;
   }
 
-  /* spain */
-  #accordionGroup > li:nth-child(4) {
-    position: absolute;
+  li.icons:nth-child(21) {
     top: 3%;
-    left: 50%;
-    
+    left: 23%;
+    background-image: url('/src/images/passport-stamp-final-4.svg');
   }
 
-  /* saudi arabia */
-  #accordionGroup > li:nth-child(5) {
-    position: absolute;
-    top: 2%;
-    left: 80%;
-    
+  li.icons:nth-child(22) {
+    top:  67%;
+    left: 16%;
+    background-image: url('/src/images/passport-stamp-final-3.svg');
+  }
+  li.icons:nth-child(23) {
+    top: 36%;
+    left: 91%;
+    background-image: url('/src/images/passport-stamp-final-2.svg');
   }
 
-  /* denmark */
-  #accordionGroup > li:nth-child(6) {
-    position: absolute;
-    top: 24%;
-    left: 75%;
-    
-  }
-
-  /* chile */
-  #accordionGroup > li:nth-child(7) {
-    position: absolute;
-    top: 56%;
-    left: 80%;
-    
-  }
-
-  /* france */
-  #accordionGroup > li:nth-child(8) {
-    position: absolute;
-    top: 49%;
-    left: 13%;
-    
-  }
-
-  /* brazil */
-  #accordionGroup > li:nth-child(9) {
-    position: absolute;
-    
-  }
-
-  /* martinique */
-  #accordionGroup > li:nth-child(10) {
-    position: absolute;
-    top: 65%;
-    left: 34%
-    
-  }
-  /* egype */
-  #accordionGroup > li:nth-child(11) {
-    position: absolute;
-    top: 70%;
+  li.icons:nth-child(24) {
+    height: 150px;
+    width: 150px;
+    top: 16%;
     left: 60%;
+    background-image: url('/src/images/passport-stamp-final-1.svg');
+  }
+
+  li.icons:nth-child(25) {
+    height: 80px;
+    width: 80px;
+    top: 65%;
+    left: 67%;
+    background-image: url('/src/images/passport-stamp-final-1.svg');
+  }
     
-  } 
-
-
-  
 }
 
 
