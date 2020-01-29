@@ -1,6 +1,5 @@
 /* eslint-disable no-case-declarations */
-require('./styles.css');
-// require('./styles_v2.css');
+// require('./styles.css');
 setTimeout(()=>{
   require('./tobi.min.css');
 const T = require('./tobi.min.js');
@@ -15,8 +14,8 @@ const countries = [{
     brazil:{
       w: 110,
       h: 110,
-      t: 55,
-      l: 7,
+      t: 46,
+      l: 83,
 
     },
     china:{

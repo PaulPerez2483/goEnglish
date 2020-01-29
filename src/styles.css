@@ -1,5 +1,5 @@
  /* 
- @Paul P HEX COLORS: 
+ HEX COLORS: 
  main desktop : { #65b0b2 } 
  mobile page : light green : { #b4d8da } 
                dark green : { #077f83 }
@@ -24,9 +24,13 @@
       justify-content: center;
   }
 
+  .stamp_img {
+    width: 450px;
+  }
+
   .stamp_img > img {
       margin: 50px 0;
-      width: 480px;
+      width: 100%;
   }
 
   .accordion_nav {
@@ -156,7 +160,7 @@
 
   .bg_img{
     z-index: 2;
-    background-image: url('/src/images/stamp-outline-final-art.svg')!important;
+    background-image: url('../dist/images/stamp-outline-final-art.svg')!important;
     background-repeat: no-repeat !important;
   }
 
@@ -213,20 +217,20 @@
   }
 
   li.icons:nth-child(21) {
-    top: 3%;
-    left: 23%;
-    background-image: url('/src/images/passport-stamp-final-4.svg');
+    top: 8%;
+    left: 24%;
+    background-image: url('../dist/images/passport-stamp-final-4.svg');
   }
 
   li.icons:nth-child(22) {
     top:  67%;
     left: 16%;
-    background-image: url('/src/images/passport-stamp-final-3.svg');
+    background-image: url('../dist/images/passport-stamp-final-3.svg');
   }
   li.icons:nth-child(23) {
     top: 36%;
     left: 91%;
-    background-image: url('/src/images/passport-stamp-final-2.svg');
+    background-image: url('../dist/images/passport-stamp-final-2.svg');
   }
 
   li.icons:nth-child(24) {
@@ -234,17 +238,16 @@
     width: 150px;
     top: 16%;
     left: 60%;
-    background-image: url('/src/images/passport-stamp-final-1.svg');
+    background-image: url('../dist/images/passport-stamp-final-1.svg');
   }
 
   li.icons:nth-child(25) {
     height: 80px;
     width: 80px;
-    top: 65%;
+    top: 62%;
     left: 67%;
-    background-image: url('/src/images/passport-stamp-final-1.svg');
-  }
-    
+    background-image: url('../dist/images/passport-stamp-final-1.svg');
+  }  
 }
 
 
