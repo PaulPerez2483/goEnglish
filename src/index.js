@@ -1,13 +1,13 @@
 /* eslint-disable no-case-declarations */
 // require('./styles.css');
-setTimeout(()=>{
-  require('./tobi.min.css');
-const T = require('./tobi.min.js');
+// setTimeout(()=>{
+//   require('./tobi.min.css');
+// const T = require('./tobi.min.js');
 
-const tobi = new T({
-  autoplayVideo: false
-});
-},1000)
+// const tobi = new T({
+//   autoplayVideo: false
+// });
+// },1000)
 
 
 const countries = [{
@@ -297,3 +297,56 @@ function reLoad() {
   let width = this.innerWidth;
   windowSize(width, 'load')
 }
+
+
+let videoLinks = [...document.querySelectorAll('[data-type=video]')];
+console.log(videoLinks);
+
+videoLinks.forEach(video => {
+    video.addEventListener('click', (video)=>{   
+    document.getElementById("lightbox").className = "open";
+    renderVideos(video.currentTarget);
+  });
+});
+
+document.getElementById("close").addEventListener("click", ()=> {
+    document.getElementById("lightbox").className = "";
+    let iframe = [...document.querySelectorAll('iframe')];
+    iframe.forEach(i => i.src = iframe.src);
+  
+
+});
+
+document.getElementById("lightbox").addEventListener("click", (e) => {
+  if (e.target.id === "lightbox") {
+    document.getElementById("lightbox").className = "";
+    let iframe = document.getElementsByTagName('IFRAME');
+    console.log(iframe);
+  }
+});
+
+
+const renderVideos = (video) => {
+    let dataEntryId = video.getAttribute('data-entryId').split(',')
+    console.log(dataEntryId);
+    let schoolName = video.getAttribute('data-school-name');
+    let videoHolder = document.getElementById('video-holder');
+    let renderVideo = dataEntryId.map( (_id, idx) => {
+      return `<div class="video-parent"><iframe 
+        id="kaltura_player_${idx}"
+        src="https://cdnapisec.kaltura.com/p/1407311/sp/140731100/embedIframeJs/uiconf_id/45010862/partner_id/1407311?iframeembed=true&playerId=kaltura_player_${idx}&entry_id=${_id}"
+        width="60%"
+        height="360"
+        allowfullscreen webkitallowfullscreen mozAllowFullScreen
+        allow="autoplay *;
+        fullscreen *;
+        encrypted-media *"
+        frameborder="0">
+      </iframe></div>`
+
+    }).join('');
+    document.getElementsByTagName('H2')[0].textContent = schoolName;
+    videoHolder.innerHTML = renderVideo;
+}
+
+
