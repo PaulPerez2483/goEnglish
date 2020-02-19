@@ -7,10 +7,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Your Trip in your words</title>
   <!-- live -->
-  <!-- <link rel="stylesheet" href="dist/styles.css"> -->
+  <link rel="stylesheet" href="dist/styles.css">
   <!-- qc -->
+  <!-- <link rel="stylesheet" href="src/styles.css"> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="src/styles.css">
   <script src="https://cdnapisec.kaltura.com/p/1407311/sp/140731100/embedIframeJs/uiconf_id/45010862/partner_id/1407311"></script>
   
 </head>
@@ -32,7 +32,7 @@
           </li>
            
           <li>
-            <button aria-label="china" data-school-name="School Name - China" class="accordion__button bg_img" href="#" data-type="video" data-entryId="1_nw9n33v8" data-group="china">
+            <button aria-label="china" data-school-name="School Name - China" class="accordion__button bg_img" href="#" data-type="video" data-entryId="1_nw9n33v8,1_nw9n33v8" data-group="china">
               <span>China</span>
               <img aria-hidden="true" src="src/images/china.svg" width="82" height="82" alt="china" />
             </button>
@@ -174,13 +174,12 @@
     </div>
 
     <!-- lightbox  -->
-    <div id="lightbox">
+    <div id="lightbox" tabindex="1">
       <div class="lightbox_holder">
-      <div id="lightbox_content">
-        <button id="close" aria-label="close modal video"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
-         <h2>Javascript Lightbox</h2>
-         <div id="video-holder"></div>
-        
+      <div id="lightbox_content" aria-labelledby="modalTitle" aria-describedby="modalDescription" role="dialog">
+        <h2 id="modalTitle" role="dialog"></h2>
+        <div id="video-holder"></div>
+        <button tabindex="5" id="close" aria-label="close modal video"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
       </div>
     </div>
     </div>
@@ -188,9 +187,9 @@
 
   </main>
   <!-- LIVE -->
-  <!-- <script src="dist/bundle.js"></script> -->
+  <script src="dist/bundle.js"></script>
   <!-- TESTING -->
-  <script src="/dist/bundle.js"></script>
+  <!-- <script src="/dist/bundle.js"></script> -->
 </body>
 
 </html>
