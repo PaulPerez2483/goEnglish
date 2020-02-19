@@ -14,14 +14,14 @@ const countries = [{
     china:{
       w: 120,
       h: 120,
-      t: 8,
+      t: 17,
       l: 8
     },
     egypt:{
       w: 110,
       h: 110,
       t: 30,
-      l: 18
+      l: 19
     },
     germany:{
       w: 110,
@@ -38,7 +38,7 @@ const countries = [{
     hungary:{
       w: 100,
       h: 100,
-      t: 55,
+      t: 58,
       l: 72
     },    
     india:{
@@ -69,7 +69,7 @@ const countries = [{
       w: 110,
       h: 110,
       t: 44,
-      l: 18
+      l: 19
     },
     mexico:{
       w: 135,
@@ -86,7 +86,7 @@ const countries = [{
     palestine:{
       w: 135,
       h: 135,
-      t: 23,
+      t: 31,
       l: 6
     },
     srilanka:{
@@ -98,25 +98,25 @@ const countries = [{
     taiwan:{
       w: 135,
       h: 135,
-      t: 21,
+      t: 26,
       l: 70
     },
     thailand:{
       w: 100,
       h: 100,
-      t: 39.5,
-      l: 7
+      t: 47,
+      l: 8
     },
     turkey:{
       w: 100,
       h: 100,
-      t: 7,
+      t: 13,
       l: 71
     },
     venezuela:{
       w: 135,
       h: 135,
-      t: 38,
+      t: 42,
       l : 71
     },
     vietnam:{
@@ -145,7 +145,7 @@ function windowSize(w, h){
           el.firstElementChild.setAttribute('style', 'display:none');
           el.setAttribute(`style`, `width: ${countries[0].brazil.w}px; height:${countries[0].brazil.h}px; background-size:cover; background-position:center;`);
           el.parentElement.setAttribute( `style`,  `top: ${countries[0].brazil.t}%; left: ${countries[0].brazil.l}%;`);
-          if(w <= 1080) el.parentElement.style.left = `${countries[0].brazil.l - 2}%`;
+          if(w <= 1080) el.parentElement.style.left = `${countries[0].brazil.l + 3}%`;
           break;
        case 'china':
         el.firstElementChild.setAttribute('style', 'display:none');
