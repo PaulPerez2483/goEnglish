@@ -343,7 +343,7 @@ const renderVideos = (video) => {
 
     }).join('');
     document.getElementsByTagName('H2')[0].textContent = schoolName;
-    videoHolder.innerHTML = renderVideo;
+    videoHolder.innerHTML = `<div class="video-flex">${renderVideo}</div>`;
 }
 
 

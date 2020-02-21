@@ -173,7 +173,6 @@
   left: 0;
   text-align: center;
   border: 1px solid black;
-
 }
 
 #close {
@@ -223,7 +222,10 @@
    
   }
   #lightbox_content {
-    width: 550px;
+    width: 756px;
+    overflow: scroll;
+    height: 490px;
+    overflow-x: hidden;
   }
 
   .button_holder { 
@@ -290,8 +292,11 @@
     left:50px;
 
   }
-  
 
+  #video-holder{
+    width: 100%;
+  }
+  
   .icons{
     height: 80px;
     width: 80px;
