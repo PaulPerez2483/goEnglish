@@ -12,7 +12,8 @@
     "build-prod": "webpack -p --mode production --watch"
   },
   "dependencies": {
-    "@rqrauhvmra/tobi": "^1.9.0"
+    "@rqrauhvmra/tobi": "^1.9.0",
+    "bigpicture": "^2.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.7.5",

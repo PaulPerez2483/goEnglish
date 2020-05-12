@@ -1,7 +1,7 @@
 /* eslint-disable no-case-declarations */
 // require('./styles.css');
 
-var BigPicture = require('bigpicture');
+
 
 const countries = [{
     brazil:{
@@ -293,19 +293,7 @@ function reLoad() {
 
 
 let videoLinks = [...document.querySelectorAll('[data-type=video]')];
-let imageLinks = [...document.querySelectorAll('[data-type=image]')];
 // console.log(videoLinks);
-console.log(imageLinks)
-
-imageLinks.forEach(img => {
-  img.addEventListener('click', (img)=>{   
-  document.getElementById("lightbox").className = "open";
-  document.getElementById('lightbox_content').tabIndex = 1;
-  document.getElementById('lightbox').focus();
-    console.log(img.currentTarget)
-  renderImages(img.currentTarget);
-});
-});
 
 videoLinks.forEach(video => {
     video.addEventListener('click', (video)=>{   
@@ -333,56 +321,20 @@ document.getElementById("lightbox").addEventListener("click", (e) => {
   }
 });
 
-const renderImages= (img) => {
-  let dataEntryId = img.getAttribute('data-entryId').split(',')
-  console.log(dataEntryId);
-  // console.log(video)
-  let schoolName = img.getAttribute('data-school-name');
-  console.log(img)
-  let videoHolder = document.getElementById('video-holder');
-  let renderVideo = dataEntryId.map( (_id, idx) => {
-    console.log(_id, idx)
-    return `<section id="${idx}" class="video-parent ${idx === 0 ? 'show' : 'hide' }" tabindex="${idx + 1}" aria-label="video ${idx + 1} ${schoolName}">
-    <div class="img-responsive">  
-    <img width="80%" src="src/images/${_id}" alt="${schoolName} - ${idx}">
-    <div>
-    </section>`
-
-  }).join('');
-  document.getElementsByTagName('H2')[0].textContent = schoolName;
-
-  videoHolder.innerHTML = `<div class="video-flex">
-  
-  ${renderVideo}
-
-    <button tabindex="1" id="right" class="show" aria-label="next item">
-       <i class="fa fa-chevron-right" aria-hidden="true"></i>
-    </button>
-
-    <button tabindex="2" id="left" class="show" aria-label="previous item">
-       <i class="fa fa-chevron-left" aria-hidden="true"></i>
-    </button>
-
-  </div>`;
-    displayVideo()
-}
-
 
 const renderVideos = (video) => {
     let dataEntryId = video.getAttribute('data-entryId').split(',')
     // console.log(dataEntryId);
     // console.log(video)
     let schoolName = video.getAttribute('data-school-name');
-    console.log(video)
     let videoHolder = document.getElementById('video-holder');
     let renderVideo = dataEntryId.map( (_id, idx) => {
-      console.log(_id, idx)
-      return `<section id="${idx}" class="video-parent ${idx === 0 ? 'show' : 'hide' }" tabindex="${idx + 1}" aria-label="video ${idx + 1} ${schoolName}">
+      return `<section class="video-parent" tabindex="${idx + 2}" aria-label="video ${idx+1} ${schoolName}">
         <iframe 
           id="kaltura_player_${idx}"
           src="https://cdnapisec.kaltura.com/p/1407311/sp/140731100/embedIframeJs/uiconf_id/45010862/partner_id/1407311?iframeembed=true&playerId=kaltura_player_${idx}&entry_id=${_id}"
           allowfullscreen webkitallowfullscreen mozAllowFullScreen
-          allow="false *;
+          allow="autoplay *;
           fullscreen *;
           encrypted-media *"
           frameborder="0">
@@ -391,78 +343,7 @@ const renderVideos = (video) => {
 
     }).join('');
     document.getElementsByTagName('H2')[0].textContent = schoolName;
-
-    videoHolder.innerHTML = `<div class="video-flex">
-    
-    ${renderVideo}
-
-      <button tabindex="1" id="right" class="show" aria-label="next item">
-         <i class="fa fa-chevron-right" aria-hidden="true"></i>
-      </button>
-
-      <button tabindex="2" id="left" class="show" aria-label="previous item">
-         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-      </button>
-
-    </div>`;
-      displayVideo()
+    videoHolder.innerHTML = `<div class="video-flex">${renderVideo}</div>`;
 }
-
-
-
-const displayVideo = () => {
-    let count = 0;
-    const videos = [...document.querySelectorAll('.video-flex > section')];
-    const left = document.getElementById('left');
-    const right = document.getElementById('right');
-
-    right.addEventListener('click', (ev)=> {
-      if(count !== videos.length - 1){
-        console.log('right')
-        count = count  +  1
-        let videosID = [...ev.path[2].children].filter(el => el.tagName === 'SECTION');
-        console.log(videosID)
-        console.log('keeping track of count', count)
-        videosID.forEach(video => {
-          console.dir(video)
-          if(video.id * 1 === count && video.classList.contains('hide')) {
-            video.classList.add('show')
-            video.classList.remove('hide')
-          }else{
-            video.classList.remove('show');
-            video.classList.add('hide');
-          }
-        
-        });
-      }
-    })
-
-    left.addEventListener('click', (ev)=> {
-      if (count > 0) {
-        console.log('left')
-        count = count - 1
-        let videosID = [...ev.path[2].children].filter(el => el.tagName === 'SECTION');
-        console.log(videosID)
-        console.log('keeping track of count', count)
-        videosID.forEach(video => {
-          console.dir(video)
-          console.log(count)
-          if(video.id * 1 === count && video.classList.contains('hide')) {
-            video.classList.add('show')
-            video.classList.remove('hide')
-          }else{
-            video.classList.remove('show');
-            video.classList.add('hide');
-          }
-        
-        });
-      }
-     
-  })
-
-}
-
-
-
 
 
