@@ -450,10 +450,10 @@ const renderVideos = (video) => {
 
 
 const schoolTitle = (video, count) => {
-  console.log('line 440 ', video);
-  console.log('line 441 ',count)
+  // console.log('line 440 ', video);
+  // console.log('line 441 ',count)
   let schoolName = video.getAttribute('data-school-name').split(',')
-  console.log(schoolName)
+  // console.log(schoolName)
   document.getElementsByTagName('H2')[0].textContent = schoolName[count];
 }
 
