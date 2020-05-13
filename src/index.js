@@ -1,8 +1,6 @@
 /* eslint-disable no-case-declarations */
 // require('./styles.css');
 
-var BigPicture = require('bigpicture');
-
 const countries = [{
     brazil:{
       w: 110,
@@ -29,6 +27,13 @@ const countries = [{
       t: 63,
       l: 60.5
     },
+    guatemala:{
+      w: 110,
+      h: 110,
+      t: 60,
+      l: 8
+    },
+    
     hongkong:{
       w: 110,
       h: 110,
@@ -52,6 +57,13 @@ const countries = [{
       h: 100,
       t: 5,
       l: 47.1,
+    },
+
+    japan:{
+      w: 110,
+      h: 110,
+      t: 60,
+      l: 83
     },
     jerusalem:{
       w: 110,
@@ -88,6 +100,12 @@ const countries = [{
       h: 135,
       t: 31,
       l: 6
+    },
+    singapore:{
+      w: 110,
+      h: 110,
+      t: 4,
+      l: 10
     },
     srilanka:{
       w: 120,
@@ -164,6 +182,13 @@ function windowSize(w, h){
         el.setAttribute(`style`, `width: ${countries[0].germany.w}px; height:${countries[0].germany.h}px; background-size:cover; background-position:center;`);
         el.parentElement.setAttribute( `style`,  `top: ${countries[0].germany.t}%; left: ${countries[0].germany.l}%;`);
         break;
+        case 'guatemala':
+          el.firstElementChild.setAttribute('style', 'display:none');
+          el.setAttribute(`style`, `width: ${countries[0].guatemala.w}px; height:${countries[0].guatemala.h}px; background-size:cover; background-position:center;`);
+          el.parentElement.setAttribute( `style`,  `top: ${countries[0].guatemala.t}%; left: ${countries[0].guatemala.l}%;`);
+          if(w <= 1080) el.parentElement.style.left = `${countries[0].guatemala.l - 3}%`;
+
+        break;
        case 'hongkong':
         el.firstElementChild.setAttribute('style', 'display:none');
         el.setAttribute(`style`, `width: ${countries[0].hongkong.w}px; height:${countries[0].hongkong.h}px; background-size:cover; background-position:center;`);
@@ -188,7 +213,14 @@ function windowSize(w, h){
         if(w <= 1080) el.parentElement.style.left = `${countries[0].indonesia.l - 3}%`;
 
        break;
-       case 'jerusalem':
+
+       case 'japan':
+        el.firstElementChild.setAttribute('style', 'display:none');
+        el.setAttribute(`style`, `width: ${countries[0].japan.w}px; height:${countries[0].japan.h}px; background-size:cover; background-position:center;`);
+        el.parentElement.setAttribute( `style`,  `top: ${countries[0].japan.t}%; left: ${countries[0].japan.l}%;`);
+        break;
+
+        case 'jerusalem':
         el.firstElementChild.setAttribute('style', 'display:none');
         el.setAttribute(`style`, `width: ${countries[0].jerusalem.w}px; height:${countries[0].jerusalem.h}px; background-size:cover; background-position:center;`);
         el.parentElement.setAttribute( `style`,  `top: ${countries[0].jerusalem.t}%; left: ${countries[0].jerusalem.l}%;`);
@@ -226,6 +258,13 @@ function windowSize(w, h){
         el.parentElement.setAttribute( `style`,  `top: ${countries[0].palestine.t}%; left: ${countries[0].palestine.l}%;`);
         if(w <= 1080) el.parentElement.style.left = `${countries[0].palestine.l - 4}%`;
 
+       break;
+       case 'singapore':
+        el.firstElementChild.setAttribute('style', 'display:none');
+        el.setAttribute(`style`, `width: ${countries[0].singapore.w}px; height:${countries[0].singapore.h}px; background-size:cover; background-position:center;`);
+        el.parentElement.setAttribute( `style`,  `top: ${countries[0].singapore.t}%; left: ${countries[0].singapore.l}%;`);
+        if(w <= 1080) el.parentElement.style.left = `${countries[0].singapore.l - 4}%`;
+        
        break;
        case 'srilanka':
         el.firstElementChild.setAttribute('style', 'display:none');
@@ -337,6 +376,7 @@ const renderImages= (img) => {
   let dataEntryId = img.getAttribute('data-entryId').split(',')
   console.log(dataEntryId);
   // console.log(video)
+  console.log(img)
   let schoolName = img.getAttribute('data-school-name');
   console.log(img)
   let videoHolder = document.getElementById('video-holder');
@@ -364,20 +404,19 @@ const renderImages= (img) => {
     </button>
 
   </div>`;
-    displayVideo()
+    displayVideo(img)
 }
 
 
 const renderVideos = (video) => {
     let dataEntryId = video.getAttribute('data-entryId').split(',')
     // console.log(dataEntryId);
-    // console.log(video)
-    let schoolName = video.getAttribute('data-school-name');
+    let schoolName = video.getAttribute('data-school-name')
     console.log(video)
     let videoHolder = document.getElementById('video-holder');
     let renderVideo = dataEntryId.map( (_id, idx) => {
       console.log(_id, idx)
-      return `<section id="${idx}" class="video-parent ${idx === 0 ? 'show' : 'hide' }" tabindex="${idx + 1}" aria-label="video ${idx + 1} ${schoolName}">
+      return `<section id="${idx}" class="video-parent ${idx === 0 ? 'show' : 'hide' }" tabindex="${idx + 1}" aria-label="video ${idx + 1} for school ${schoolName}">
         <iframe 
           id="kaltura_player_${idx}"
           src="https://cdnapisec.kaltura.com/p/1407311/sp/140731100/embedIframeJs/uiconf_id/45010862/partner_id/1407311?iframeembed=true&playerId=kaltura_player_${idx}&entry_id=${_id}"
@@ -390,7 +429,8 @@ const renderVideos = (video) => {
       </section>`
 
     }).join('');
-    document.getElementsByTagName('H2')[0].textContent = schoolName;
+
+
 
     videoHolder.innerHTML = `<div class="video-flex">
     
@@ -405,21 +445,32 @@ const renderVideos = (video) => {
       </button>
 
     </div>`;
-      displayVideo()
+      displayVideo(video)
 }
 
 
+const schoolTitle = (video, count) => {
+  console.log('line 440 ', video);
+  console.log('line 441 ',count)
+  let schoolName = video.getAttribute('data-school-name').split(',')
+  console.log(schoolName)
+  document.getElementsByTagName('H2')[0].textContent = schoolName[count];
+}
 
-const displayVideo = () => {
+
+const displayVideo = (video) => {
+    
     let count = 0;
     const videos = [...document.querySelectorAll('.video-flex > section')];
     const left = document.getElementById('left');
     const right = document.getElementById('right');
-
+    schoolTitle(video, count)
     right.addEventListener('click', (ev)=> {
       if(count !== videos.length - 1){
+     
         console.log('right')
         count = count  +  1
+        schoolTitle(video, count)
         let videosID = [...ev.path[2].children].filter(el => el.tagName === 'SECTION');
         console.log(videosID)
         console.log('keeping track of count', count)
@@ -439,8 +490,10 @@ const displayVideo = () => {
 
     left.addEventListener('click', (ev)=> {
       if (count > 0) {
+        // schoolTitle(click, count)
         console.log('left')
         count = count - 1
+        schoolTitle(video, count)
         let videosID = [...ev.path[2].children].filter(el => el.tagName === 'SECTION');
         console.log(videosID)
         console.log('keeping track of count', count)
