@@ -221,7 +221,6 @@
 }
 
 .img-responsive{
-  height: auto;
   width: 100%;
   display: flex;
   align-items: center;
@@ -352,24 +351,24 @@
     z-index: 999;
   }
 
-  li.icons:nth-child(21) {
+  li.icons:nth-child(18) {
     top: 8%;
     left: 24%;
     background-image: url('./images/passport-stamp-final-4.svg');
   }
 
-  li.icons:nth-child(22) {
+  li.icons:nth-child(19) {
     top:  67%;
     left: 16%;
     background-image: url('./images/passport-stamp-final-3.svg');
   }
-  li.icons:nth-child(23) {
+  li.icons:nth-child(20) {
     top: 36%;
-    left: 91%;
+    left: 80%;
     background-image: url('./images/passport-stamp-final-2.svg');
   }
 
-  li.icons:nth-child(24) {
+  li.icons:nth-child(21) {
     height: 150px;
     width: 150px;
     top: 16%;
@@ -377,7 +376,7 @@
     background-image: url('./images/passport-stamp-final-1.svg');
   }
 
-  li.icons:nth-child(25) {
+  li.icons:nth-child(22) {
     height: 80px;
     width: 80px;
     top: 62%;
