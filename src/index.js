@@ -501,9 +501,9 @@ const displayVideo = (video) => {
 
         let videosID = [...ev.path[2].children].filter(el => el.tagName === 'SECTION');
         console.log(videosID)
-        console.log('keeping track of count', count)
+        // console.log('keeping track of count', count)
         videosID.forEach(video => {
-          console.dir(video)
+          // console.dir(video, 'line 506')
           if (video.id * 1 === count && video.classList.contains('hide')) {
             video.classList.add('show')
             video.classList.remove('hide')
@@ -528,10 +528,10 @@ const displayVideo = (video) => {
         schoolTitle(video, count)
 
         let videosID = [...ev.path[2].children].filter(el => el.tagName === 'SECTION');
-        console.log(videosID)
-        console.log('keeping track of count', count)
+        // console.log(videosID)
+        // console.log('keeping track of count', count)
         videosID.forEach(video => {
-          // console.dir(video)
+          console.dir(video)
           // console.log(count)
           if (video.id * 1 === count && video.classList.contains('hide')) {
             video.classList.add('show')
