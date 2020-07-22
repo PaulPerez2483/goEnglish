@@ -1,7 +1,3 @@
-# empty-project
-
-Empty project.
-
 ## Building and running on localhost
 
 First install dependencies:
@@ -25,9 +21,6 @@ npm run build-dev
 ## Running
 
 ```sh
-node dist/bundle.js
+run live server on main directory
 ```
 
-## Credits
-
-Made with [createapp.dev](https://createapp.dev/)
